@@ -37,7 +37,7 @@
 			<span>Area menu, added at widgets</span> /*Появляется если не существует позьзовательское header_menu в function.php*/
 		<?endif;?>
 		!!! Внимание в хроме и эксплорере! Появляется точка вначале меню! Для решения проблемы в качестве агрумента функции в п.12 добавляем
-		before_widget' => '', after_widget'  => ''
+		'before_widget' => '', 'after_widget'  => ''
 16. Вывод постов в контенте : в index.php вставляем :
 		<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 		   <!-- здесь формирование вывода постов, -->
