@@ -1,4 +1,4 @@
-Натяжка на WP:
+Натяжка вёрстки на WP:
 1. Подключение хедера вызовом функции :
 	<? wp_header();?>
 2. Подключение футера вызовом функции : 
@@ -13,4 +13,38 @@
 	add_action('wp_enqueue_scripts','load_my_script');
 5. Убрать статическое подключение стилей и библиотек из index.php
 6. Подключить рисунки в index.php, указав в пути вместо "images/" <? bloginfo('template_url');?>/images/
-7.
+7. Создать файл header.php и перенести в него header с файла index.php
+8. Создать файл sidebar.php и перенести в него sidebar с файла index.php
+9. Создать файл footer.php и перенести в него footer с файла index.php
+10. В контенте убрать одинаковые статьи, оставив только одну для шаблона.
+11. Меняем значение поля Title на <title><? bloginfo('name');?></title> 
+12. Добавляем поддержку темой виджетов : 
+	register_sidebar(array('name' => 'Меню', 'id' =>'header_menu'));
+	/*Все возможные параметры функции*/
+	$args = array(
+	'name'          => __( 'Sidebar name', 'theme_text_domain' ),
+	'id'            => 'unique-sidebar-id',
+	'description'   => '',
+        'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+13. Перетаскиваем в наш виджет Меню встроенный виджет "Произвольное меню"
+14. Добавляем существующие страницы в меню.
+15. Удаляем/комментим существующее меню в header.php и прописываем там:
+		<? if(!dynamic_sidebar('header_menu')):?>
+			<span>Area menu, added at widgets</span> /*Появляется если не существует позьзовательское header_menu в function.php*/
+		<?endif;?>
+		!!! Внимание в хроме и эксплорере! Появляется точка вначале меню! Для решения проблемы в качестве агрумента функции в п.12 добавляем
+		before_widget' => '', after_widget'  => ''
+16. Вывод постов в контенте : в index.php вставляем :
+		<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
+		   <!-- здесь формирование вывода постов, -->
+		   <!-- где работают теги шаблона относящиеся к the loop -->
+			 здесь тело цикла, которое будет использоваться в качетве шаблона
+		<?php endwhile; ?>
+		<?php endif; ?>
+	16.1. Добавление автор поста : вместо статического "admin" : <? the_author();?>
+	16.2. Вывод времени добавления поста : the_time('M jS, Y'); аргументы которые выводят разные форматы можно посмотеть на сайте
+	16.3. Вывод ссылки количества комментариев : comments_popup_link($zero, $one, $more, $css_class, $none)
