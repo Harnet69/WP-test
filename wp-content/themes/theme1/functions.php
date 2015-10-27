@@ -7,6 +7,10 @@
 	}
 /*Load script&style*/
 	add_action('wp_enqueue_scripts','load_my_script');
+	
+/*Возможность добавлять миниатюры к записям из админки */
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size(180, 180); 	
 
 /*Add widjets*/
 	register_sidebar(array('name' => 'Меню', 'id' =>'header_menu', 'before_widget' => '', 'after_widget'  => ''));

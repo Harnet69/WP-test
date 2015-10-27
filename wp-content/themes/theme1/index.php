@@ -12,18 +12,22 @@
 						   <!-- где работают теги шаблона относящиеся к the loop -->
 							<div class="articles">
 								<div class="articles-gen-images">
-									<a href="#"><img src="<? bloginfo('template_url');?>/images/post-img1.jpg" alt="" /></a>
+									<a href="<? the_permalink();?>">
+										<? if(has_post_thumbnail()):?>
+											<?the_post_thumbnail();?> 
+											<? else :?>
+												<img src="<? bloginfo('template_url');?>/images/no-image.jpg" alt='' />
+											<? endif?>
+									</a>
 								</div>
 								<div class="articles-head">
 									<span class="articles-date"><img src="<? bloginfo('template_url');?>/images/articles-author.jpg" alt="" /><span class="user-color"><? the_author();?></span>&nbsp<? the_time('M jS, Y');?></span>
 									<span class="articles-comments" ><img src="<? bloginfo('template_url');?>/images/articles-comment.jpg" alt=""><a href="#"><? comments_popup_link()?></a></span>
 								</div>
 								<div class="articles-body">
-									<h2><a href="#">Thanksgiving greeting card PSD</a></h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-										Aenean fermentum malesuada orci a commodo. Aenean dapibus urna quis nulla consequat sagittis. 
-										Quisque ut ultrices massa. Mauris felis felis, rutrum sit amet vehicula ut, tempus quis lectus. . </p>
-									<p><a href="#">Read More</a></p>
+									<h2><a href="<? the_permalink();?>"><? the_title();?></a></h2>
+									<p><? the_excerpt();?></p>
+									<p><a href="<? the_permalink();?>">Read More</a></p>
 								</div>
 							</div>
 						<?php endwhile; ?>

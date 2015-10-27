@@ -48,3 +48,27 @@
 	16.1. Добавление автор поста : вместо статического "admin" : <? the_author();?>
 	16.2. Вывод времени добавления поста : the_time('M jS, Y'); аргументы которые выводят разные форматы можно посмотеть на сайте
 	16.3. Вывод ссылки количества комментариев : comments_popup_link($zero, $one, $more, $css_class, $none)
+	16.4. Вывод названия статьи : the_title( $before, $after, $echo );/*обрамляющий тег "до", "после", вернуть запись для посл. 
+		  обработки. если заголовок ссылка, то <a href="<? the_permalink();"></a> */
+	16.5. Вывод текста в контенте записи : the_excerpt()/* по умолчанию выводит 55 слов и ставит в конце...*/	
+	16.6. Вывод в записи "read more" : <a href="<? the_permalink();?>">Read More</a>	
+	16.7. В ссылку изображения-миниатюры записи вставить ссылку на запись <a href="<? the_permalink();?>"
+	16.8. Прописать возможность добавлять миниатюры к записям из админки : 	/*ДОБАВЛЯЕТСЯ в function.php ПЕРЕД ВИДЖЕТОМ!*/
+			= Позволяет устанавливать миниатюру посту.
+				add_theme_support( 'post-thumbnails' );
+				add_theme_support( 'post-thumbnails', array( 'post' ) );          // Только для post
+				add_theme_support( 'post-thumbnails', array( 'page' ) );          // Только для page
+				add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) ); // Для post и movie типов
+			= устанавливает размер миниатюры поста по умолчанию : /*crop - необходимость обрезки изображения*/
+				set_post_thumbnail_size($width, $height, $crop) 
+			= в index.php в главном цикле вывода записей вместо ссылки на стат. картинку :<img src="<?
+					bloginfo('template_url');?>/images/post-img1.jpg" alt="" /> нужно прописать проверку наличия картинки и если её нет подставлять дефолтную : 
+									<a href="<? the_permalink();?>">
+										<? if(has_post_thumbnail()):?> //проверка условия
+											<?the_post_thumbnail();?> //имеющаяся в записи миниатюра
+											<? else :?>
+												<img src="<? bloginfo('template_url');?>/images/no-image.jpg" alt='' />//"заглушка"
+											<? endif?>
+									</a>
+		
+					
