@@ -6,7 +6,10 @@
 							<input class="search-img" type="image" src="<? bloginfo('template_url');?>/images/search-btn.jpg">
 						</form>
 					</div>
-					<div class="sidebar-widget">
+								<? if(!dynamic_sidebar('sidebar')):?>
+					<span>This is area for sidebar, added at widgets</span>
+				<?endif;?>
+					<!--<div class="sidebar-widget">
 					<ul class="ads-main">
 						<li><a href="#"><img src="<? bloginfo('template_url');?>/images/ads1.jpg" alt=""/></a></li>				
 						<li><a href="#"><img src="<? bloginfo('template_url');?>/images/ads2.jpg" alt=""/></a></li>					
@@ -72,6 +75,7 @@
 						</p>
 					</div>
 					</div>
+					-->
 					<div class="sidebar-widget">
 						<div class="sidebar-facebook">
 							<img src="<? bloginfo('template_url');?>/images/sidebar-facebook.jpg" alt=""/>

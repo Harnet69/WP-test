@@ -14,13 +14,12 @@
 
 /*Add widjets*/
 	register_sidebar(array('name' => 'Меню', 'id' =>'header_menu', 'before_widget' => '', 'after_widget'  => ''));
-/*	$args = array(
-	'name'          => __( 'Sidebar name', 'theme_text_domain' ),
-	'id'            => 'unique-sidebar-id',
-	'description'   => '',
-        'class'         => '',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>' ); */
 
+/*Создаём боковой сайдбар*/
+	register_sidebar(array('name' => 'Sidebar',
+							'id' =>'sidebar',
+							'before_widget' => '<div class="sidebar-categories">',
+							'after_widget'  => '</div>',
+							'before_title'  => '<h2>',
+							'after_title'   => '</h2>'));
+							
