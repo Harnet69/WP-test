@@ -165,13 +165,13 @@ ul{
 		float:right; width:300px;
 		}
 			.sidebar-widget{
-				margin-bottom:20px;font-size:13px;float:right; width:330px;
+				margin-bottom:20px;font-size:13px;float:right; width:300px;
 			}
 			.sidebar-widget a{
 				color:#535353;font-size:13px; font:Arial regular;
 			}
 				.search-main{
-					border: 5px solid #e6e6e6; padding:1px 0; color:#535353;  overflow:hidden;				margin-bottom:20px;	
+					border: 5px solid #e6e6e6; padding:1px 0; color:#535353;  overflow:hidden;	margin-bottom:20px;	
 				}
 					.search-txt{
 						padding:5px 5px; border:none; width:245px; 
@@ -180,22 +180,22 @@ ul{
 						float:left; font-size:12px;   
 					}
 				.ads-main{
-					background:#f3f3f3; overflow:hidden; padding-top:17px;					
+					background:#f3f3f3; overflow:hidden; padding-top:0px;					
 				}
-					.ads-main li{
-						float:left; line-height:0; margin :0 0 17px 17px;
+					.ads-main a{
+						float:right; margin :0 0 17px 17px;
 					}
 				.sidebar-categories{
-					overflow:hidden;margin-bottom:40px; img-border
+					overflow:hidden;margin-bottom:40px;
 				}	
 					.sidebar-categories h2{
 						font-size:20px; color:#01b2bf; border-bottom: 7px solid #e6e6e6; margin:0 0 13px 0;	text-transform:uppercase;
 					}
 					.sidebar-categories li{
-						 padding-top:15px;		
+						 padding-top:15px!important; float:left; width:50%;
 					}
 					.sidebar-categories li:first-child{
-						 padding-top:0px;		
+						 padding-top:0px;		 float:left; width:50%;
 					}
 					
 					.side-categories{
@@ -205,7 +205,7 @@ ul{
 						margin-bottom:10px; overflow:hidden;
 						}
 					.sidebar-categories img{
-						border:0px solid #e7e7e7;line-height:0; margin-right:15px;vertical-align:middle;
+						float:left; border:0px solid #e7e7e7;line-height:0; margin-right:15px;vertical-align:middle;
 						}
 					.sidebar-facebook{
 					}			
@@ -243,3 +243,8 @@ ul{
 	.footer-copy p a{
 		color:#eb4900;
 	}
+
+.side-categories li{
+	float:left;
+	width:50%;
+}
