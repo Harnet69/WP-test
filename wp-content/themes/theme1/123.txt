@@ -107,4 +107,33 @@
 					<div class="sidebar-categories">			
 						<h2>This is area for sidebar</h2>
 					</div>
-					
+20. Создание и настройка cайтбара футера:					
+	20.1. В function.php зарегистрировать сайтбар футера с классом "footer-info" наших повторяющахся блоков в нём :
+			register_sidebar(array('name' => 'Footer',
+							'id' =>'footer',
+							'before_widget' => '<div class="footer-info">',
+							'after_widget'  => '</div>',
+							'before_title'  => '<h2>',
+							'after_title'   => '</h2>'));
+	20.2. В админке в виджетах добавляем в появившийся виджет Footer два текстовых поля и произвольное меню
+		= в текстовые поля переносим заголовки и параграфы из footer.php
+		= в произвольном меню назначаем заголовок
+	20.3. В файле footer.php комментируем весь HTML код касающийся виджетов и вместо него вписываем:
+			<?if(!dynamic_sidebar('footer')):?>
+				<div class="footer-info">			
+					<h3>This is area for footer</h3>
+				</div>
+				<div class="footer-info">			
+					<h3>This is area for footer</h3>
+				</div>
+				<div class="footer-info">			
+					<h3>This is area for footer</h3>
+				</div>
+			<?endif;?>
+	20.4. Для формирования вертикального меню вместо горизонтального создаём свойства для элементов списка li класса footer-main :
+			.footer-main li {
+				float:none;
+			} и меняем тоже line-height
+21. Постраничная навигация (пагинатор):
+	21.1. Закомментировать HTML код пагинатора в index.php			
+			

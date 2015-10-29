@@ -2,11 +2,6 @@
 	<div class="content-wrapper">
 		<div class="content-main">
 			<div class="content">
-				<div id='slideshowHolder'>    
-						<img src="<? bloginfo('template_url');?>/images/img1.jpg" alt='' />            
-						<img src="<? bloginfo('template_url');?>/images/img1.jpg" alt='' />            
-						<img src="<? bloginfo('template_url');?>/images/img1.jpg" alt='' />            
-				</div>
 						<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 						   <!-- здесь формирование вывода постов, -->
 						   <!-- где работают теги шаблона относящиеся к the loop -->
@@ -31,11 +26,11 @@
 								</div>
 							</div>
 						<?php endwhile; ?>
+								<? else :?> 
+								<p>по вашему запросу ничего не найдено!</p>
 						<?php endif; ?>
 				
 				<div class="pager">
-					<?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
-					<!--
 					<a href="#">1</a>
 					<a href="#">2</a>
 					<a href="#">3</a>
@@ -43,7 +38,7 @@
 					<span>of</span>
 					<a href="#">75</a>
 					<a href="#">Next</a>
-					-->
+				
 				</div>
 			</div>
 <? get_sidebar();?>	

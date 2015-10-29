@@ -226,7 +226,7 @@ ul{
 			font-size:20px; color:#01b2bf; text-transform:uppercase;	
 		}
 		.footer-info p a{
-			float:left; color:#eb4900; margin-top:26px;
+			float:left; color:#eb4900; margin-top:20px;
 		}
 	.footer-copy{
 		width:990px; margin:0 auto; overflow:hidden; padding: 20px  15px;
@@ -247,4 +247,7 @@ ul{
 .side-categories li{
 	float:left;
 	width:50%;
+}
+.footer-main li {
+	float:none; line-height:1.3;
 }

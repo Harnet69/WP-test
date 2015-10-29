@@ -6,7 +6,7 @@
 							<input class="search-img" type="image" src="<? bloginfo('template_url');?>/images/search-btn.jpg">
 						</form>
 					</div>
-								<? if(!dynamic_sidebar('sidebar1')):?>
+				<? if(!dynamic_sidebar('sidebar')):?>
 					<div class="sidebar-categories">			
 						<h2>This is area for sidebar</h2>
 					</div>
