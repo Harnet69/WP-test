@@ -18,8 +18,9 @@
 						<?php endwhile; ?>
 						<?php endif; ?>
 				<div class="single_pager">
-					<p><? previous_post_link();next_post_link();?><p>
+					<p><? previous_post_link('<span>&laquo;</span> %link');next_post_link('%link <span>&raquo;</span>');?><p>
 				</div>
+				<?comments_template();?>
 			</div>
 			
 <? get_sidebar();?>	
