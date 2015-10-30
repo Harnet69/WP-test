@@ -1,3 +1,38 @@
+[12:05:43] Aliot: Создаем папку в темах WP.
+Создаем в ней файлы index.php и style.css. В файл style.css вставляем вначале:
+/*   
+Theme Name: Тема 2
+Theme URI: http://aliot.tw1.su/
+Description: краткое-описание-темы
+Author: Aliot
+Author URI: http://aliot.tw1.su/
+Version: 1.0
+*/
+и копируем style.css вёрстки.
+Копируем index.php из вёрстки index.html
+Копируем папки JS, CSS и Images
+
+Там же в корне размещаем screenshot.png или jpg. Создаем скриншотом экрана страницы вёрстки (разрешение 600x450px).
+ 
+Меняем в index.php 
+<link rel = "stylesheet" type = "text/css"; href = "<?php bloginfo('stylesheet_url'); ?>" />
+
+Подключаем прочие сss и js файлы: типа
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/elastislide.css" />
+
+Подключаем рисунки множественной заменой:
+images/ на <?php bloginfo('template_url');?>/images/
+
+Создаем файл header.php, переносим в него хедер и подключаем функцией <?php get_header();?>
+
+Создаем файл footer.php, переносим в него футер и подключаем функцией <?php get_footer();?>
+
+В header.php перед закрывающим тегом </head> вызовем функцию <? wp_head();?>
+
+В footer.php перед закрывающим тегом </body> вызовем функцию <? wp_footer();?>
+[12:05:56] Aliot: это предыстория к твоей шпоре
+
+
 Натяжка вёрстки на WP:
 1. Подключение хедера вызовом функции :
 	<? wp_head();?>
@@ -135,5 +170,34 @@
 				float:none;
 			} и меняем тоже line-height
 21. Постраничная навигация (пагинатор):
-	21.1. Закомментировать HTML код пагинатора в index.php			
-			
+	21.1. Закомментировать HTML код пагинатора в index.php
+		= вставляем в function.php : 
+			function my_pagenavi() {
+				global $wp_query;
+				$big = 999999999; // уникальное число для замены
+
+				$args = array(
+					'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) )
+					,'format' => ''
+					,'current' => max( 1, get_query_var('paged') )
+					,'total' => $wp_query->max_num_pages
+					,'current' => 1
+				);
+
+				$result = paginate_links( $args );
+
+				// удаляем добавку к пагинации для первой страницы
+				$result = str_replace( '/page/1/', '', $result );
+
+				echo $result;
+			}	
+		= вызываем в index.php : 
+				<? my_pagenavi();?>
+22. Создание своего шаблона записи(если его не создавать то берётся шаблон индексной):
+	22.1. Создать страницу с именем single.php - это шаблон записи(поста)
+	22.2. Наполнить её кодом (если нет спец. макета - кодом с index.php)
+	22.3. Убрать ненужные блоки (баннеры, пагинатор, read more, комментарии, миниатюры, убрать ссылку с названия статьи (title))
+	22.4. Вместо функции цитаты the_excerpt() основного контента прописать вывод всего контента the_content();  
+	22.5. Вставить ссылки на предыдущие/следующие записи в "обёртке" от пагинатора :
+		previous_post_link() и next_post_link()
+23. Создание своего шаблона записи производится аналогично, неоходимо только удалить автора и комментарии.			

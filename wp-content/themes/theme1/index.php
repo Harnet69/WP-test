@@ -34,7 +34,7 @@
 						<?php endif; ?>
 				
 				<div class="pager">
-					<?php if (function_exists('wp_corenavi')) wp_corenavi(); ?>
+					<? my_pagenavi();?>
 					<!--
 					<a href="#">1</a>
 					<a href="#">2</a>

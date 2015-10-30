@@ -251,3 +251,22 @@ ul{
 .footer-main li {
 	float:none; line-height:1.3;
 }
+.single_page_p{
+	padding-left: 0px!important;
+}
+.single_pager{
+	margin:10px auto 25px auto; display:table; font-size:15px; font-weight:bold;
+}
+			.single_pager a{
+				 color:#868686;padding:0 7px;float:left;
+			}
+			.single_pager a:hover{
+				 text-decoration:none;float:left;
+				 color:#eb4900;
+			}
+			.single_pager a:last-child{
+				color:#eb4900;float:left;
+			}
+			.single_pager span{
+				 padding:0 7px;float:left;
+			}

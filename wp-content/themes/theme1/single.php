@@ -5,42 +5,23 @@
 						<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 						   <!-- здесь формирование вывода постов, -->
 						   <!-- где работают теги шаблона относящиеся к the loop -->
-							<div class="articles">
-								<div class="articles-gen-images">
-									<a href="<? the_permalink();?>">
-										<? if(has_post_thumbnail()):?>
-											<?the_post_thumbnail();?> 
-											<? else :?>
-												<img src="<? bloginfo('template_url');?>/images/no-image.jpg" alt='' />
-											<? endif?>
-									</a>
-								</div>
+							<div class="ingle_page_p">
 								<div class="articles-head">
 									<span class="articles-date"><img src="<? bloginfo('template_url');?>/images/articles-author.jpg" alt="" /><span class="user-color"><? the_author();?></span>&nbsp<? the_time('M jS, Y');?></span>
 									<span class="articles-comments" ><img src="<? bloginfo('template_url');?>/images/articles-comment.jpg" alt=""><a href="#"><? comments_popup_link()?></a></span>
 								</div>
 								<div class="articles-body">
-									<h2><a href="<? the_permalink();?>"><? the_title();?></a></h2>
-									<p><? the_excerpt();?></p>
-									<p><a href="<? the_permalink();?>">Read More</a></p>
+									<h2><? the_title();?></h2>
+									<p><? the_content();?></p>
 								</div>
 							</div>
 						<?php endwhile; ?>
-								<? else :?> 
-								<p>по вашему запросу ничего не найдено!</p>
 						<?php endif; ?>
-				
-				<div class="pager">
-					<a href="#">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<span>of</span>
-					<a href="#">75</a>
-					<a href="#">Next</a>
-				
+				<div class="single_pager">
+					<p><? previous_post_link();next_post_link();?><p>
 				</div>
 			</div>
+			
 <? get_sidebar();?>	
 		</div>
 	</div>
