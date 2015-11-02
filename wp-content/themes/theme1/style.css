@@ -487,3 +487,6 @@ img.alignright,
 img.aligncenter {
 	margin-bottom: 12px;
 }
+.attachment-full.wp-post-image{
+	float:right;
+}

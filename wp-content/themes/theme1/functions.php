@@ -109,3 +109,46 @@ function twentyten_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif;
+/*Баннер
+* реализация без использования админки
+*/
+/*register_sidebar(array('name' => 'Header',
+							'id' =>'header',
+							'before_widget' => "<div class='head-banner'>",// класс стилей для виджетов этого сайтбара
+							'after_widget'  => '</div>'
+							));
+*/
+function my_banner()
+		{
+		  $labels = array(
+			'name' => 'Баннеры', // Основное название типа записи
+			'singular_name' => 'Баннер', // отдельное название записи типа Book
+			'add_new' => 'Добавить баннер',
+			'add_new_item' => 'Добавить Баннер',
+			'edit_item' => 'Редактировать баннер',
+			'new_item' => 'Новый баннер',
+			'view_item' => 'Посмотреть баннер',
+			'search_items' => 'Найти баннре',
+			'not_found' =>  'Баннеров не найдено',
+			'not_found_in_trash' => 'В корзине баннеров не найдено',
+			'parent_item_colon' => '',
+			'menu_name' => 'Баннеры'
+
+		  );
+		  $args = array(
+			'labels' => $labels,
+			'public' => true,
+			'publicly_queryable' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'query_var' => true,
+			'rewrite' => true,
+			'capability_type' => 'post',
+			'has_archive' => true,
+			'hierarchical' => false,
+			'menu_position' => null,
+			'supports' => array('title','thumbnail')
+		  );
+		  register_post_type('banner',$args);
+		}
+add_action('init','my_banner');		

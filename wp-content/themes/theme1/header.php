@@ -9,7 +9,14 @@
 	<div class="head-wrapper">
 		<div class="head">
 			<div class="head-logo"><a href="/"><img src="<? bloginfo('template_url');?>/images/logo.jpg" alt="" /></a></div>
-			<div class="head-banner"><img src="<? bloginfo('template_url');?>/images/728x90.jpg" alt="" /></div>
+			<? $banner = new WP_Query(array('post_type'=>'banner', 'posts_per_page'=>'1'));?>
+			<?php if ($banner->have_posts()) :  while ($banner->have_posts()) : $banner->the_post(); ?>
+			   <!-- здесь формирование вывода постов, -->
+			   <!-- где работают теги шаблона относящиеся к the loop -->
+			   <?the_post_thumbnail('full');?> 
+			<?php endwhile; ?>
+			<?php endif; ?>
+			<!--<div class="head-banner"><img src="<? bloginfo('template_url');?>/images/728x90.jpg" alt="" /></div>-->
 		</div>
 	</div>
 	<div class="menu-wrapper">
