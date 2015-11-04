@@ -152,3 +152,73 @@ function my_banner()
 		  register_post_type('banner',$args);
 		}
 add_action('init','my_banner');		
+
+/*Слайдер*/
+		function my_slider()
+			{
+			  $labels = array(
+				'name' => 'Слайдеры', // Основное название типа записи
+				'singular_name' => 'Слайдер', // отдельное название записи типа Book
+				'add_new' => 'Добавить слайдер',
+				'add_new_item' => 'Добавить новый слайдер',
+				'edit_item' => 'Редактировать слайдер',
+				'new_item' => 'Новый слайдер',
+				'view_item' => 'Посмотреть слайдер',
+				'search_items' => 'Найти слайдер',
+				'not_found' =>  'Слайдеров не найдено',
+				'not_found_in_trash' => 'В корзине слайдеров не найдено',
+				'parent_item_colon' => '',
+				'menu_name' => 'Слайдеры'
+				);
+			  $args = array( /*это массив параметров*/
+				'labels' => $labels,
+				'public' => true,
+				'publicly_queryable' => true,
+				'show_ui' => true,
+				'show_in_menu' => true,
+				'query_var' => true,
+				'rewrite' => true,
+				'capability_type' => 'post',
+				'has_archive' => true,
+				'hierarchical' => false,
+				'menu_position' => null,
+				'supports' => array('title','editor','thumbnail')
+				);
+			  register_post_type('slider',$args);
+			}
+add_action('init','my_slider');	
+
+/*Социальные сети*/
+		function my_soc()
+			{
+			  $labels = array(
+				'name' => 'Социальные сети', // Основное название типа записи
+				'singular_name' => 'Социальная сеть', // отдельное название записи типа Book
+				'add_new' => 'Добавить соцсеть',
+				'add_new_item' => 'Добавить новуйю соцсеть',
+				'edit_item' => 'Редактировать соцсеть',
+				'new_item' => 'Новая соцсеть',
+				'view_item' => 'Посмотреть соцсеть',
+				'search_items' => 'Найти соцсеть',
+				'not_found' =>  'Соцсетей не найдено',
+				'not_found_in_trash' => 'В корзине соцсетей не найдено',
+				'parent_item_colon' => '',
+				'menu_name' => 'Соцсети'
+				);
+			  $args = array( /*это массив параметров*/
+				'labels' => $labels,
+				'public' => true,
+				'publicly_queryable' => true,
+				'show_ui' => true,
+				'show_in_menu' => true,
+				'query_var' => true,
+				'rewrite' => true,
+				'capability_type' => 'post',
+				'has_archive' => true,
+				'hierarchical' => false,
+				'menu_position' => null,
+				'supports' => array('title','editor','thumbnail')
+				);
+			  register_post_type('social',$args);
+			}
+add_action('init','my_soc');	

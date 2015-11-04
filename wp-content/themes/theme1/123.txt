@@ -264,6 +264,8 @@ images/ на <?php bloginfo('template_url');?>/images/
 			<?php if ($banner->have_posts()) :  while ($banner->have_posts()) : $banner->the_post(); ?>
 				<?the_post_thumbnail();?>  /*Вызов миниатюры*/
 			<?php endwhile; ?>
+			<? else: echo "<p>Место для баннера разм. 728х90px</p>";?>/*Если нет баннера*/
 			<?php endif; ?>
 	28.4. Количество выводимых записей 'posts_per_page'=>1 указывается при создании экз. класса в пункте 27.2. 
+		
 	

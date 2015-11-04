@@ -2,10 +2,16 @@
 	<div class="content-wrapper">
 		<div class="content-main">
 			<div class="content">
-				<div id='slideshowHolder'>    
-						<img src="<? bloginfo('template_url');?>/images/img1.jpg" alt='' />            
-						<img src="<? bloginfo('template_url');?>/images/img1.jpg" alt='' />            
-						<img src="<? bloginfo('template_url');?>/images/img1.jpg" alt='' />            
+				<div id='slideshowHolder'>  
+				<? $slider = new WP_Query(array('post_type'=>'slider', 'order'=>'ASC'));?>		
+				<?php if ($slider->have_posts()) :  while ($slider->have_posts()) : $slider->the_post(); ?>
+			   <!-- здесь формирование вывода постов, -->
+			   <!-- где работают теги шаблона относящиеся к the loop -->
+			   <?the_post_thumbnail('full');?> 
+			   <? the_title();?>
+			<?php endwhile; ?>
+				<? else: echo "<p>Место для слайдера</p>";?>
+				<?php endif; ?>
 				</div>
 						<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 						   <!-- здесь формирование вывода постов, -->
