@@ -1,0 +1,237 @@
+/*   
+Theme Name: Тема 2
+Theme URI: http://harnet.ru
+Description: краткое-описание-темы
+Author: Aliot
+Author URI: http://harnet.ru/
+Version: 2.0
+*/
+
+*{
+	margin:0; padding:0;
+}
+html{
+	background:#000000 url(Images/Girl2.jpg) center top no-repeat; height:100%;
+}
+body{
+	height:auto!important;
+	height:100%;
+	min-height:100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#151515+0,151515+100&amp;0+0,0+45,1+61,1+100 */
+background: -moz-linear-gradient(top,  rgba(21,21,21,0) 0%, rgba(21,21,21,0) 730px, rgba(21,21,21,1) 886px, rgba(21,21,21,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(21,21,21,0)), color-stop(730px,rgba(21,21,21,0)), color-stop(61%,rgba(21,21,21,1)), color-stop(100%,rgba(21,21,21,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(21,21,21,0) 0%,rgba(21,21,21,0) 730px,rgba(21,21,21,1) 886px,rgba(21,21,21,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(21,21,21,0) 0%,rgba(21,21,21,0) 730px,rgba(21,21,21,1) 886px,rgba(21,21,21,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(21,21,21,0) 0%,rgba(21,21,21,0) 730px,rgba(21,21,21,1) 886px,rgba(21,21,21,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(21,21,21,0) 0%,rgba(21,21,21,0) 730px,rgba(21,21,21,1) 886px,rgba(21,21,21,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00151515', endColorstr='#151515',GradientType=0 ); /* IE6-9 */
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:1.5;
+}
+img{
+	border:0;
+}
+a{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+.carcas{
+	width:960px; margin:0 auto;
+}
+	.header{
+		margin-bottom:20px;
+	}
+		.logo{
+			margin: 195px 0 0 20px;
+		}
+		.menu{
+				margin: 250px 0 0 0;overflow:hidden; background:rgba(0,0,0,0.5);font-family:
+				Myriad PRO regular; font-size:19px; text-transform:uppercase;
+		}
+			.menu ul{
+				
+			}
+			.menu li{
+				float:left;list-style:none;	line-height:1; margin:10px 10px 0 10px;
+			}
+			.menu li:first-child{
+				float:left;list-style:none;	line-height:1; margin:10px 10px 0 0px;
+			}
+			.menu li a{
+				color:#f3f3f3; padding: 10px 15px 20px 15px; display:block;
+			}
+			.current-menu-item{
+				background:#232323; border-radius:5px 5px 0 0;
+			}	
+.content-main{
+	color:#565656;font-family:Myriad Pro; font-size:13px;overflow:hidden;
+}	
+	.content-main h2{
+		margin:31px 13px 11px 0;font-size:17px; border-bottom: 1px #dbdbdb solid;
+	}
+	.content-main h2 a{
+		color:#dbdada;
+	}
+	.content-main p{
+		margin:0 15px 0 0;
+	}
+	.content-main p a{
+		color:#777777;
+	}
+	.content-main img{
+		border:2px solid #151515; display:block;
+	}
+	
+	.content-main-blocks{
+		margin-top:31px; overflow:hidden;
+		padding-bottom:105px;
+	}
+		.content-main-blocks div{
+			width:30%; float:left; padding-right:5%;overflow:hidden;
+		}
+		.content-main-blocks div:last-child{
+			width:30%; float:right; padding-right:0;
+		}
+			.read-more{
+				float:left; margin:25px 0 0 0; color:#000000!important; background:#444444; padding:0 7px 0 7px;
+			}
+.footer-wrapper{
+	width:100%;
+	background:#080808;
+}
+	.footer-main{
+		width:960px; margin:0 auto;	color:#fefcfc; padding:15px 0; overflow:hidden;
+	}
+		.footer-left{
+			float:left; overflow:hidden;
+		}
+		.footer-left img{
+			float:left;
+		}
+		.footer-left p{
+			float:left; padding:25px 0 0 20px; font-family:Myriad Pro;
+		}
+		.footer-left p a{
+			color:#fefcfc;  margin-left:10px;
+		}		
+		.footer-right{
+			float:right; margin:10px 0 0 0 ;
+		}
+		.footer-right img{
+			margin-left:10px;
+		}
+.exhib{
+	overflow:hidden;
+}
+.exhib p img {
+	float:left; margin:0px 25px 0 0; border:none;
+}
+/*Style for page Exhibitions.html*/
+.exhib p {
+	margin:15px 0 20px 0;
+}
+/*Style for page about.html*/
+.about-me{
+	width:62%!important; overflow:hidden;
+}
+.about-me p{
+	margin-bottom: 20px;font-family:Myriad Pro; font-size:13px;
+}
+.about-me p:last-child{
+	margin-bottom: -20px;
+}
+.about-me h2{
+	margin:0 13px 20px 0!important;font-family:Myriad Pro; font-weight:normal;
+}
+.img-left{
+	float:left; margin:0 20px 10px 0;
+}
+.skill-set{
+	width:30%!important;
+}
+.content-main-blocks{
+		margin-top:31px; overflow:hidden;
+		padding-bottom:75px;
+}
+/*Style for page contacts.html*/
+.contact-me{
+	float:left; overflow:hidden;width:60%!important;
+}
+	.contact-me h2{
+		 margin:0 0 20px 0!important; color:#dbdada;
+	}
+	.contact-form{
+		float:left!important; width:100%!important; overflow:hidden;
+	}
+		.contact-form p{
+			font-size:18px; margin-bottom:40px;
+		}
+		.contact-form label{
+			float:left; width:30%;
+		}
+		.contact-form input[type=text]{
+			padding: 6px 20px; background:rgba(0,0,0,0.3); border:2px solid rgba(0,0,0,0.3); border-radius:10px;color:#dbdada; width:40%;
+		}
+		.contact-form input:focus{
+			border:2px solid #2c2b28; outline:none;
+		}
+		.contact-form textarea{
+			padding: 6px 26px; background:rgba(0,0,0,0.3); border:2px solid rgba(0,0,0,0.3); border-radius:10px;color:#dbdada; width:60%; height:130px; overflow:hidden;
+		}
+		.contact-form textarea:focus{
+			border:2px solid #2c2b28; outline:none;
+		}
+	.contacts-details{
+		float:right!important; overflow:hidden;width:30%!important;
+	}
+		.contacts-details p img{
+			float:left; line-height:0; padding:0 10px 0 0;
+		}
+		.contacts-details p{
+			margin-bottom:30px;
+		}
+		.contacts-details h2{
+			margin:24px 0 20px 0; color:#dbdada;
+		}
+/*Style for page portfolio.html*/
+.portfolio{
+	display:block; float:left!important; margin-left:10px;width:67%!important; overflow:hidden!important; padding-right:0!important;
+}
+.portfolio a {
+	float:left; margin:0 40px 40px 0 ;
+}
+.portfolio a:nth-child(2n) {
+	float:right; margin:0 40px 40px 0;
+}
+.sidebar-portfolio{
+	float:right; width:30%!important; overflow:hidden;
+	margin-right:1%;
+}
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" href="css/liSlidik.css">
+<link rel="stylesheet" href="css/liSlidik.blackClasic.css">
+<script src="js/jquery-1.8.min.js"></script>
+<script src="js/jquery.liSlidik.js"></script>
+<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+<!--[if lte IE 9]>
+  <style type="text/css">
+	body{
+		background:url(Images/back_IE8_2.png) repeat-x 0 730px;
+	}
+	.menu, .carousel-wrapper{
+		background:url(Images/back_IE8.png);
+	}
+	.content-main-blocks div{
+			padding-right:3%;
+		}
+	.active{
+		background:url(Images/nav-hover.png) no-repeat top center; background-size: 100%;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='Images/nav-hover.png', sizingMethod='scale');
+	}	
+    </style>
+<![endif]-->
+<title>Photosite-portfolio page</title>
+</head>
+<body>
+	<div class="carcas">
+		<div class="header">
+			<a href="/"><img src="Images/logo2.png"  class="logo "alt="" /></a>
+			<ul class="menu">
+				<li><a href="/">Home</a></li>
+				<li><a href="about.html">ABOUT ME</a></li>
+				<li><a href="#"class="active">PORTFOLIO</a></li>
+				<li><a href="exhibition.html">EXHIBITIONS</a></li>
+				<li><a href="contacts.html">CONTACT ME</a></li>
+			</ul>
+		</div>
+			<ul id="slide_2" class="slidik">
+				<li class="show"><img alt="Proin purus sapien, euismod vulputate fermentum non, vulputate nec neque. Nullam ante metus, condimentum eget molestie ac, gravida quis velit. " src="Images/portfolio-page.jpg"></li>
+				<li><img alt="Proin purus sapien, euismod vulputate fermentum non, vulputate nec neque. Nullam ante metus, condimentum eget molestie ac, gravida quis velit. " src="Images/portfolio-page.jpg"></li>
+				<li><img alt="Proin purus sapien, euismod vulputate fermentum non, vulputate nec neque. Nullam ante metus, condimentum eget molestie ac, gravida quis velit." src="Images/portfolio-page.jpg"></li>
+				<li><img alt="Proin purus sapien, euismod vulputate fermentum non, vulputate nec neque. Nullam ante metus, condimentum eget molestie ac, gravida quis velit."src="Images/portfolio-page.jpg"></li>
+				<a data-slidik="slide_2" class="next" href="#">Next</a>
+				<a data-slidik="slide_2" class="prev" href="#">Prev</a>
+				<div class="captionWrap"><div data-slidik="slide_2" class="caption"></div></div>
+				<a href="portfolio.html" class="portfolio-close"></a>
+			</ul>
+	</div>
+<div class="footer-wrapper">
+	<div class="footer-main">
+		<div class="footer-left">
+				<a><img src="Images/logo-footer2.png" alt="" /></a>
+					<p>Design&create by<a href="#">www.aliot.eu</a></p>
+		</div>
+		<div class="footer-right">
+			<a><img src="Images/footer-twitter.png" alt="" /></a>
+			<a><img src="Images/footer-facebook.png" alt="" /></a>
+		</div>
+	</div>
+</div>		
+
+<script>
+$(function(){
+	$(window).load(function(){
+		$('#slide_2').liSlidik({
+			auto:3000,
+    		duration: 1000
+		});
+	})
+});
+</script>
+</body>
+</html>

@@ -34,7 +34,7 @@ images/ на <?php bloginfo('template_url');?>/images/
 
 
 Натяжка вёрстки на WP:
-1. Подключение хедера вызовом функции :
+1. Подключение панели админа вызовом функции :
 	<? wp_head();?>
 2. Подключение футера вызовом функции : 
 	<? wp_footer();?>
@@ -52,7 +52,7 @@ images/ на <?php bloginfo('template_url');?>/images/
 8. Создать файл sidebar.php и перенести в него sidebar с файла index.php  на место него прописать : <? get_sidebar();?>
 9. Создать файл footer.php и перенести в него footer с файла index.php  на место него прописать : <? get_sidebar();?>
 10. В контенте убрать одинаковые статьи, оставив только одну для шаблона.
-11. Меняем значение поля Title на <title><? bloginfo('name');?></title> 
+11. Меняем значение поля Title на <title><? bloginfo('name');?><? wp_title();?></title> 
 12. Добавляем поддержку темой виджетов и создаём сайтбар-меню : 
 	register_sidebar(array('name' => 'Меню', 'id' =>'header_menu'));
 	/*Все возможные параметры функции*/
@@ -267,5 +267,47 @@ images/ на <?php bloginfo('template_url');?>/images/
 			<? else: echo "<p>Место для баннера разм. 728х90px</p>";?>/*Если нет баннера*/
 			<?php endif; ?>
 	28.4. Количество выводимых записей 'posts_per_page'=>1 указывается при создании экз. класса в пункте 27.2. 
-		
-	
+
+Вторая тема :
+	- подключение стилей на index.php к файлу style.css функцией bloginfo('stylesheet_url')
+		<link rel="stylesheet" type="text/css" href="<? bloginfo('stylesheet_url');?>" />
+	- прописываем путь к нашим изображениям в папке Images/ 
+		<? bloginfo('template_url');?>/Images/	
+	- создание меню другим способом (не произвольное меню в сайдбаре)
+		= в function.php создаём запись register_nav_menu ('имя','описание')
+		= в появившейся закладке в админке создаём меню и наполняем его
+		= в файле header.php вызываем его в нужном месте функцией wp_nav_menu(array('theme_location'=>'имя меню указанное в functions.php'));
+			Возможные параметры
+			wp_nav_menu( array(
+					'theme_location'  => '',
+					'menu'            => '', 
+					'container'       => 'div', 
+					'container_class' => '', 
+					'container_id'    => '',
+					'menu_class'      => 'menu', 
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+					'depth'           => 0
+				) );
+			!!! при создании меню формируется лишний div, убираем его  из 'container' => 'div'
+	- карусель
+		= регистрируем в functions.php возможность работы с виджетами:
+				register_sidebar(array('name' => 'slider_main',
+								'id' =>'slider_index',
+								'description' => 'Слайдер на главной',
+								'before_widget' => '',
+								'after_widget'  => '',
+								'before_title'  => '',
+								'after_title'   => ''));
+		= через админку	в созданный виджет перетаскиваем виджет "текст" и переносим туда html текст					
+		= 	в index.php вызываем сайдбар
+					<? if(!dynamic_sidebar('slider_index')) : ?>
+					<ul id="carousel" class="elastislide-list">
+						<li>Это место для карусели!</li>
+					</ul>	

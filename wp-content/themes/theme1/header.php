@@ -17,8 +17,6 @@
 			<?php endwhile; ?>
 				<? else: echo "<p>Место для баннера разм. 728х90px</p>";?>
 				<?php endif; ?>
-			
-			
 			<!--<div class="head-banner"><img src="<? bloginfo('template_url');?>/images/728x90.jpg" alt="" /></div>-->
 		</div>
 	</div>
@@ -28,21 +26,12 @@
 					<span>This is area for menu, added at widgets</span>
 				<?endif;?>
 			<ul class="ico-social">
-				<li>
 			<? $social = new WP_Query(array('post_type'=>'social'));?>
 			<?php if ($social->have_posts()) :  while ($social->have_posts()) : $social->the_post(); ?>
-			   <!-- здесь формирование вывода постов, -->
-			   <!-- где работают теги шаблона относящиеся к the loop -->
-			   <a href="<?the_content();?>"><?the_post_thumbnail('full');?></a> 
+			   <li><a href="<? the_title()?>"><?the_post_thumbnail();?></a><li>
 			<?php endwhile; ?>
+				</ul>
 				<? else: echo "<p>Место для баннера разм. 728х90px</p>";?>
 				<?php endif; ?>
-				</li>
-				<!--
-				<li><a href="#"><img src="<? bloginfo('template_url');?>/images/ico-vk.png" alt=""></a></li>
-				<li><a href="#"><img src="<? bloginfo('template_url');?>/images/ico-yt.png" alt=""/></a></li>
-				<li><a href="#"><img src="<? bloginfo('template_url');?>/images/ico-f.png" alt=""/></a></li>
-				<li><a href="#"><img src="<? bloginfo('template_url');?>/images/ico-tw.png" alt=""/></a></li>-->
-			</ul>
+
 		</div>
-	</div>

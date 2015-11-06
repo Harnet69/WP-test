@@ -1,0 +1,40 @@
+*{
+margin:0; padding:0;
+}
+body{
+	background:green;
+}
+.wrapper{
+width:900px; background:#000000; margin:0 auto; overflow:hidden;
+}
+	.header{
+		color:white; overflow:hidden;
+	}
+	.header img{
+		float:left;
+	}
+	.header h1{
+		float:right; line-height:3; margin-right: 100px;
+	}
+	
+	
+
+
+	.left{
+		float:right; background:red;width:70%; margin:0 auto; text-align:center;overflow:hidden;
+	}
+		.left img {
+			float:left; margin:30px 15px;
+		}
+		.left img:nth-child(2n) {
+			float:right; margin: 30px 15px;
+		}
+	.right{
+		float:left;background:blue;width:30%; margin:0 auto; height:100%;
+	}
+		.right h2{
+			text-align:center;
+		}
+		.right p{
+			 text-align:left; margin: 20px 10px;
+		}
