@@ -5,7 +5,7 @@
 						<?php if (have_posts()) :  while (have_posts()) : the_post(); ?>
 						   <!-- здесь формирование вывода постов, -->
 						   <!-- где работают теги шаблона относящиеся к the loop -->
-							<div class="ingle_page_p">
+							<div class="single_page_p">
 								<div class="articles-head">
 									<span class="articles-date"><img src="<? bloginfo('template_url');?>/images/articles-author.jpg" alt="" /><span class="user-color"><? the_author();?></span>&nbsp<? the_time('M jS, Y');?></span>
 									<span class="articles-comments" ><img src="<? bloginfo('template_url');?>/images/articles-comment.jpg" alt=""><a href="#"><? comments_popup_link()?></a></span>

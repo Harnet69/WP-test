@@ -311,3 +311,20 @@ images/ на <?php bloginfo('template_url');?>/images/
 					<ul id="carousel" class="elastislide-list">
 						<li>Это место для карусели!</li>
 					</ul>	
+					
+Шаблон для страницы записи
+	1.Создать файл шаблона и назвать его «single-slug.php» или «single-id.php» slug и id это ярлык и идентификатор поста;
+	2.Сделать копию файла «single.php» и назвать её, к примеру, «single-default.php» тем самым мы разграничим все посты по шаблонам для удобства.
+	3.Открыть файл «single.php», удалить все содержимое и вставить следующий код:
+	<?php
+	  $post = $wp_query->post;
+	  if (in_category('portfolio')) { //slug  категории
+		  include(TEMPLATEPATH.'/single-portfolio.php');
+	  } else {
+		  include(TEMPLATEPATH.'/single-default.php');
+	  }
+	?>
+Галерея - переделка стандартной
+
+
+					

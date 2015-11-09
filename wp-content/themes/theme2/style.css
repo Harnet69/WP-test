@@ -123,7 +123,10 @@ a:hover{
 			margin-left:10px;
 		}
 .exhib{
-	overflow:hidden;
+	overflow:hidden!important;
+ 	width: 28%!important;
+	float:left!important;
+	margin-bottom: 15px;
 }
 .exhib p img {
 	float:left; margin:0px 25px 0 0; border:none;
@@ -234,4 +237,19 @@ img.alignleft,
 img.alignright,
 img.aligncenter {
 	margin-bottom: 12px;
+}
+/*Style for single-default.php*/
+.single-default{
+	width:100%!important; overflow:hidden;
+}
+.single-default img{
+	float:left;
+	margin: 0 15px 15px 0;
+}
+.single-default p{
+	margin-bottom: 20px;font-family:Myriad Pro; font-size:13px;
+}
+.single-default h2{
+	margin:0 13px 20px 0!important;font-family:Myriad Pro; font-weight:normal;
+}
 }

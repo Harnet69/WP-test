@@ -7,6 +7,7 @@
 						<li>Это место для карусели!</li>
 					</ul>
 			<?endif;?>
+			</div>
 				<!--<ul id="carousel" class="elastislide-list">
 						<li><a href="#"><img src="http://test/wp-content/uploads/2015/11/yves.png" alt="yves" /></a></li>
 						<li><a href="#"><img src="http://test/wp-content/uploads/2015/11/pierre-cardin.png" alt="pierre-cardin" /></a></li>
