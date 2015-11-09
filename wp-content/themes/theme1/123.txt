@@ -325,6 +325,7 @@ images/ на <?php bloginfo('template_url');?>/images/
 	  }
 	?>
 Галерея - переделка стандартной
-
+	- в functions.php создаём функцию :
+		function 
 
 					

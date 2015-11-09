@@ -13,8 +13,6 @@
 		<?php if ( !dynamic_sidebar('footer-soc') ) : ?>
 			<p>Место для лого и копирайтов</p>"
 		<?php endif; ?>
-			<!--<a><img src="<? bloginfo('template_url');?>/Images/footer-twitter.png" alt="" /></a>
-			<a><img src="<? bloginfo('template_url');?>/Images/footer-facebook.png" alt="" /></a>-->
 		</div>
 	</div>
 </div>		

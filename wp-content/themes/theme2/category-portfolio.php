@@ -10,8 +10,6 @@
 					</ul>
 			<?endif;?>
 		</div>
-			
-		
 				<div class="content-main-blocks" style="padding-bottom:75px">
 					<div class="portfolio">
 					<? $arr = array('post_type' => 'post',

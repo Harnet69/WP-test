@@ -53,6 +53,7 @@ function wp_corenavi() {
   echo $pages . paginate_links($a);
   if ($max > 1) echo '</div>';
 }
+/*вывод галереи в записи рубрики портфолио*/
 register_sidebar(array('name' => 'Галерея',
 							'id' =>'my_galery',
 							'description' => 'Добавьте текстовое поле с html кодом',
@@ -60,4 +61,9 @@ register_sidebar(array('name' => 'Галерея',
 							'after_widget'  => '',
 							'before_title'  => '',
 							'after_title'   => ''));
-							
+/*галерея на основе штатной галереи WP*/
+	function short_galery(){
+		
+		
+	}
+	
