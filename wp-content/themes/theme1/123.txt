@@ -325,7 +325,31 @@ images/ на <?php bloginfo('template_url');?>/images/
 	  }
 	?>
 Галерея - переделка стандартной
-	- в functions.php создаём функцию :
-		function 
-
-					
+	- создаём на странице/записи стандартную галерею (НЕ трогаем её имя!)
+	- в functions.php создаём функцию ( даём шорткоду своё имя (например short_galery)) :
+		function short_galery($attr, $text='')/*$attr - массив атрибутов в который приходят id картинок, $text - пустая строка */
+		{}
+	- "привязываем" созданную функцию к стандартной :
+		add_shortcode('shortcode_gallery', 'short_galery')/*shortcode_gallery - имя стандартной галлереи, short_galery - имя своей функции*/
+	- 	$attr - массив атрибутов в который приходят id картинок приходит в строке, поэтому разбиваем его в массив :	
+		$imge = explode(',', $attr['ids']);/*сейчас в каждом $imge[] - лежит id картинки*/
+		echo wp_get_attachment_image( $imge[0], 'medium' );// выводит картинку с id который находится здесь - $imge[0]	
+	- регулярные выражения позволяют вырезать из кода ненужный кусок используется программа RegExr
+	
+		function mygallery($attr, $text = ''){
+		$imge = explode(',', $attr['ids']);
+		$pattern = '#(width|height)="\d+"#';/*Регулярное выражение*/
+		$result = '<ul id="slide_2" class="slidik">';
+		foreach ($imge as $item){
+			$image_url = wp_get_attachment_image( $item, 'full');
+			$image_url = preg_replace($pattern, '',$image_url);
+			$result .= '<li>'.$image_url.'<li>';		
+		}
+		$result.= '<a data-slidik="slide_2" class="next" href="#">Next</a>
+				<a data-slidik="slide_2" class="prev" href="#">Prev</a>
+				<div class="captionWrap"><div data-slidik="slide_2" class="caption"></div></div>
+				<a href="portfolio.html" class="portfolio-close"></a>
+			</ul>';
+		echo $result;		
+	}
+	add_shortcode( "gallery","mygallery");

@@ -1,5 +1,9 @@
 <? get_header('single-portfolio');?>
-				<?php if ( !dynamic_sidebar('my_galery') ) : ?>
-			<p>Место для галереи</p>"
-		<?php endif; ?>
-<? get_footer('single-portfolio');?>
+<div class="content-main">
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<? the_content();?>
+<?php endwhile; else: ?>
+
+<?php endif; ?>
+<?get_footer('single-portfolio');?>
+

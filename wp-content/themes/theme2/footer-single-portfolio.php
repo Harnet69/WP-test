@@ -16,9 +16,7 @@
 		</div>
 	</div>
 </div>		
-	$( '#carousel' ).elastislide();
-</script>
-<script>
+<script type="text/javascript">
 $(function(){
 	$(window).load(function(){
 		$('#slide_2').liSlidik({

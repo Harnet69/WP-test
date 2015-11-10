@@ -53,17 +53,22 @@ function wp_corenavi() {
   echo $pages . paginate_links($a);
   if ($max > 1) echo '</div>';
 }
-/*вывод галереи в записи рубрики портфолио*/
-register_sidebar(array('name' => 'Галерея',
-							'id' =>'my_galery',
-							'description' => 'Добавьте текстовое поле с html кодом',
-							'before_widget' => '',
-							'after_widget'  => '',
-							'before_title'  => '',
-							'after_title'   => ''));
-/*галерея на основе штатной галереи WP*/
-	function short_galery(){
-		
-		
+add_filter('widget_text', 'do_shortcode');
+
+	function mygallery($attr, $text = ''){
+		$imge = explode(',', $attr['ids']);
+		$pattern = '#(width|height)="\d+"#';
+		$result = '<ul id="slide_2" class="slidik">';
+		foreach ($imge as $item){
+			$image_url = wp_get_attachment_image( $item, 'full');
+			$image_url = preg_replace($pattern, '',$image_url);
+			$result .= '<li>'.$image_url.'<li>';		
+		}
+		$result.= '<a data-slidik="slide_2" class="next" href="#">Next</a>
+				<a data-slidik="slide_2" class="prev" href="#">Prev</a>
+				<div class="captionWrap"><div data-slidik="slide_2" class="caption"></div></div>
+				<a href="portfolio.html" class="portfolio-close"></a>
+			</ul>';
+		echo $result;		
 	}
-	
+	add_shortcode( "gallery","mygallery");

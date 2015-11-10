@@ -4,7 +4,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<h2><? the_title();?></h2>
 						<? the_post_thumbnail();?>
-						<p><? the_content();?></p>
+						<p><? the_content();?>
 				</div>		
 <?php endwhile; else: ?>
 <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
