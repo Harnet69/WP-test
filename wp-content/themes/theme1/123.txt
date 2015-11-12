@@ -353,3 +353,15 @@ images/ на <?php bloginfo('template_url');?>/images/
 		echo $result;		
 	}
 	add_shortcode( "gallery","mygallery");
+Вывод произвольных полей:
+	- создаём произвольное поле в записи и заполняем его
+	- функция вывода значения произвольного поля - get_post_custom();/*получает все данные о произвольных полях текущего поста.*/
+		Вместо этой функции можно использовать get_post_meta( $post_id ). Разница между ними в том, что get_post_meta() нужно передавать ID записи, а get_post_custom() получит ID текущей записи автоматически, если не передать ID.
+		<? $custom_fields = get_post_custom();?>
+			<?if (!empty($custom_fields['place'][0])){
+				echo "<p class='exhib-place'>".$custom_fields['place'][0]."<p>";}
+			?>
+Шаблоны для разных категорий/рубрик	можно запихать в один category.php и выводить их через if, имена категории, которой принадлежит эта запись	
+	можно брать функцией $category = get_the_category(); и вывести методом $category[0]->cat_name;
+	
+	

@@ -12,6 +12,16 @@
 					<div class="exhib">
 						<a href="<? THE_PERMALINK();?>"><? the_post_thumbnail();?></a>
 						<a href="<? THE_PERMALINK();?>"><h2><? the_title();?></h2></a>
+							<? $custom_fields = get_post_custom();?>
+								<?if (!empty($custom_fields['place'][0])){
+									echo "<p class='exhib-place'>".$custom_fields['place'][0]."<p>";}
+								?>
+								<?if (!empty($custom_fields['date'][0])){
+									echo "<p class='exhib-date'>".$custom_fields['date'][0]."<p>";}
+								?>
+								<?if (!empty($custom_fields['ticket'][0])){
+									echo "<p class='exhib-ticket'>".$custom_fields['ticket'][0]."<p>";}
+								?>
 						<p><? the_excerpt();?></p>
 						<a class="read-more" href="<? the_permalink();?>">read more</a>
 					</div>	

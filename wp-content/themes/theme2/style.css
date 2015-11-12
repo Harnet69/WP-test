@@ -131,9 +131,23 @@ a:hover{
 .exhib p img {
 	float:left; margin:0px 25px 0 0; border:none;
 }
+.exhib-place{
+	background:url(Images/exhibitions-ico1.png) no-repeat left;
+	padding:5px 0 0 40px;
+}
+.exhib-date{
+	background:url(Images/exhibitions-ico2.png) no-repeat left;
+	padding:5px 0 0 40px;
+}
+.exhib-ticket{
+	background:url(Images/exhibitions-ico3.png) no-repeat left;
+	padding:5px 0 0 40px;
+}
+
 /*Style for page Exhibitions.html*/
 .exhib p {
 	margin:15px 0 20px 0;
+	
 }
 /*Style for page about.html*/
 .about-me{
