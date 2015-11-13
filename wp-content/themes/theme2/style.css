@@ -144,6 +144,24 @@ a:hover{
 	padding:5px 0 0 40px;
 }
 
+/*Для страницы контактов*/
+.cont-addr{
+	background:url(Images/contact_ico1.png) no-repeat left;
+	padding:5px 0 0 40px;
+}
+.cont-tel{
+	background:url(Images/contact_ico2.png) no-repeat left;
+	padding:5px 0 0 40px;
+}
+.cont-email{
+	background:url(Images/contact_ico3.png) no-repeat left;
+	padding:5px 0 0 40px;
+}
+.cont-reg{
+	background:url(Images/contact_ico4.png) no-repeat left;
+	padding:5px 0 0 40px;
+}
+
 /*Style for page Exhibitions.html*/
 .exhib p {
 	margin:15px 0 20px 0;
@@ -179,26 +197,36 @@ a:hover{
 	.contact-me h2{
 		 margin:0 0 20px 0!important; color:#dbdada;
 	}
-	.contact-form{
+	.wpcf7{
 		float:left!important; width:100%!important; overflow:hidden;
 	}
-		.contact-form p{
+		.wpcf7 p{
 			font-size:18px; margin-bottom:40px;
 		}
-		.contact-form label{
+		.wpcf7 label{
 			float:left; width:30%;
 		}
-		.contact-form input[type=text]{
+		.wpcf7 input[type=text]{
 			padding: 6px 20px; background:rgba(0,0,0,0.3); border:2px solid rgba(0,0,0,0.3); border-radius:10px;color:#dbdada; width:40%;
 		}
-		.contact-form input:focus{
+		.wpcf7 input[type=email]{
+			padding: 6px 20px; background:rgba(0,0,0,0.3); border:2px solid rgba(0,0,0,0.3); border-radius:10px;color:#dbdada; width:40%;
+		}
+		.wpcf7 input:focus{
 			border:2px solid #2c2b28; outline:none;
 		}
-		.contact-form textarea{
+		.wpcf7  textarea{
 			padding: 6px 26px; background:rgba(0,0,0,0.3); border:2px solid rgba(0,0,0,0.3); border-radius:10px;color:#dbdada; width:60%; height:130px; overflow:hidden;
 		}
-		.contact-form textarea:focus{
+		.wpcf7 textarea:focus{
 			border:2px solid #2c2b28; outline:none;
+		}
+		.wpcf7-form-control.wpcf7-submit{
+			background:url('Images/contact-send.png') no-repeat left;
+			border:none;
+			width:104px;
+			height:26px;
+			cursor:pointer;
 		}
 	.contacts-details{
 		float:right!important; overflow:hidden;width:30%!important;

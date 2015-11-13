@@ -71,3 +71,22 @@ function mygallery($args, $text=''){
 		echo '<ul>';
 	}
 	add_shortcode('gallery', 'mygallery');
+	
+/*вставка страницы собственной темы*/
+function setup_theme_admin_menus() {
+	// проверяем, что пользователь может обновлять настройки
+if (!current_user_can('manage_options')) {
+    wp_die('You do not have sufficient permissions to access this page.');
+}  
+    add_submenu_page('themes.php',
+        'Front Page Elements', 'Настройки моей темы', 'manage_options',
+        'front-page-elements', 'theme_front_page_settings');
+}  
+
+add_action("admin_menu", "setup_theme_admin_menus"); 
+
+function theme_front_page_settings() {
+    echo "Hello, world!";
+}  
+
+

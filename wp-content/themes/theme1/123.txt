@@ -362,6 +362,28 @@ images/ на <?php bloginfo('template_url');?>/images/
 				echo "<p class='exhib-place'>".$custom_fields['place'][0]."<p>";}
 			?>
 Шаблоны для разных категорий/рубрик	можно запихать в один category.php и выводить их через if, имена категории, которой принадлежит эта запись	
-	можно брать функцией $category = get_the_category(); и вывести методом $category[0]->cat_name;
+	можно брать функцией $category = get_the_category(); и вывести в условии if методом $category[0]->cat_name;
 	
-	
+Создать собственную страницу своей темы в админке 
+		http://oddstyle.ru/wordpress-2/stati-wordpress/sozdanie-stranicy-nastroek-dlya-wordpress-temy.html
+	/*вставка страницы собственной темы*/
+		function setup_theme_admin_menus() {
+			add_submenu_page('themes.php',
+				'Front Page Elements', 'Настройки моей темы', 'manage_options',
+				'front-page-elements', 'theme_front_page_settings');
+		}  
+
+		add_action("admin_menu", "setup_theme_admin_menus"); 
+
+		function theme_front_page_settings() {
+			echo "Hello, world!";
+		}  
+Подключение шаблонов для конкретных страниц :
+	- создать страницу с именем шаблона (например contacts.php)
+	- в ней создать запись :
+		<?
+			/*
+			Template Name: Шаблон страницы контактов
+			*/
+		?> 
+	- в админке редактирования страницы появилась возможность выбора шаблона (базовый - page.php)	
